@@ -6,14 +6,12 @@
  * @str: pointer variable
  *
  */
-void _puts(char *str)
+void _puts(const char *s)
 {
-	int count = 0;
-
-	while (str[count] != '\0')
+	while (*s != '\0')
 	{
-		_putchar(str[count]);
-		count++;
+		_putchar(*s);
+		s++;
 	}
 	_putchar('\n');
 }

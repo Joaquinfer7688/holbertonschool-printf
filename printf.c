@@ -4,7 +4,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, scont, cont = 0;
+	int i, cont = 0;
 	va_list args;
 	va_start(args, format);
 
@@ -18,17 +18,11 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == 'c') /* checks type of content */
 			{
-				while (format[i + 1] != '\0') /* iterate the string */
-				{
-					i++;
 					_putchar(va_arg(args, int)); /* prints the position of the string */
-				}
 			}
 			else if (format[i] == 's')
 			{
-				scont = strlen(format);
-				i++;
-				cont += (scont - 1);
+				cont += fputs(va_arg(args, char *), stdout);
 			}
 			else if (format[i] == '%')
 			{
@@ -36,9 +30,10 @@ int _printf(const char *format, ...)
 			
 			}
 		}
-		else
+		else if (format[i] == '\0')
 		{
-			_putchar('');
+			_putchar(' ');
+		}
 	}
 	va_end(args);
 	return (cont);
