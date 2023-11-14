@@ -8,20 +8,20 @@ int _printf(const char *format, ...)
 	va_list args;
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++) // initalize variable i for counter, and iterate the array
+	for (i = 0; format[i] != '\0'; i++) /* initalize variable i for counter, and iterate the array */
 	{
-		if (format[i] != '\0') // verify if the array had content
+		if (format[i] != '\0') /* verify if the array had content */
 		{
-			if (format[i] == '%') // checks for %
+			if (format[i] == '%') /* checks for % */
 			{
 				i++;
 			}
-			if (format[i] == 'c') // checks type of content
+			if (format[i] == 'c') /* checks type of content */
 			{
-				while (format[i + 1] != '\0') // iterate the string
+				while (format[i + 1] != '\0') /* iterate the string */
 				{
 					i++;
-					_putchar(va_arg(args, int)); // prints the position of the string
+					_putchar(va_arg(args, int)); /* prints the position of the string */
 				}
 			}
 			else if (format[i] == 's')
