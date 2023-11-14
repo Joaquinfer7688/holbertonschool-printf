@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 				while (format[i + 1] != '\0') // iterate the string
 				{
 					i++;
-					_putchar(va_arg(args, char)); // prints the position of the string
+					_putchar(va_arg(args, int)); // prints the position of the string
 				}
 			}
 			else if (format[i] == 's')
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == '%')
 			{
-				_putchar(%);
+				_putchar('%');
 			
 			}
 		}
