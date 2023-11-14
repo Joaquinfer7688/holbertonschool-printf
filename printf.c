@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(NULL);
+			_putchar('');
 	}
 	va_end(args);
 	return (cont);
