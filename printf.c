@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 's')
 			{
-				scont = _puts(va_arg(args, char *));
+				scont = strlen(format);
 				i++;
 				cont += (scont - 1);
 			}
