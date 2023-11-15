@@ -49,6 +49,9 @@ int _printf(const char *format, ...)
 		       		write(1, &format[j], 1);
 				cont++;
 				}
+				{
+					break;
+				}
 			}
 		}
 			else
