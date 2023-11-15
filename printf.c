@@ -39,14 +39,18 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				write(1, &format[j - 1], 1);
-				cont++; }
-			j++; }
+				write(1, "%", 1);
+				cont++;
+		       		write(1, &format[j], 1);
+				cont++;
+			}
+		}
 			else
 			{
 				write(1, &format[j], 1);
 				cont++;
-				j++; }
+			}
+			j++;
 	}
 	va_end(args);
 	return (cont);
