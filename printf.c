@@ -21,8 +21,7 @@ int _printf(const char *format, ...)
 			if (format[j] == '%')
 			{
 				write(1, "%", 1);
-				cont++;
-			}
+				cont++; }
 			else if (format[j] == 'c')
 			{
 				i = va_arg(args, int);
@@ -43,6 +42,11 @@ int _printf(const char *format, ...)
 				write(1, &format[j], 1);
 				cont++; }
 			j++; }
+			else
+			{
+				write(1, &format[j], 1);
+				cont++;
+				j++; }
 	}
 	va_end(args);
 	return (cont);
