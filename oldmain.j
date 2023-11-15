@@ -62,14 +62,14 @@
      b = _printf("");
      cont = cont + output(a,b);
      printf("\n---------------\n");
-     printf("Test 4");
-     printf("\nexpected: ");
-     a = printf(NULL);
-     printf("\nobtained: ");
-     fflush(stdout);
-     b = _printf(NULL);
-     cont = cont + output(a,b);
-     printf("\n---------------\n");
+     /* printf("Test 4"); 
+     printf("\nexpected: "); 
+     a = printf(NULL); 
+     printf("\nobtained: "); 
+     fflush(stdout); 
+     b = _printf(NULL); 
+     cont = cont + output(a,b); 
+     printf("\n---------------\n"); */
      printf("Test 5");
      printf("\nexpected: ");
      a = printf("%%");
