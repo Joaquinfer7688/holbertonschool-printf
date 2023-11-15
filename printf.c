@@ -1,48 +1,45 @@
 #include "main.h"
-
-
-
+/**
+ * _printf - Main function
+ * @format: Pointer
+ * Return: Counter
+ */
 int _printf(const char *format, ...)
 {
 	int i, cont = 0;
 	va_list args;
+
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++) /* initalize variable i for counter, and iterate the array */
+	for (i = 0; format[i] != '\0'; i++) /* initalize variable i for counter */
 	{
 		if (format[i] == '%') /* checks for % */
 		{
 			i++;
 			if (format[i] == '\0')
 			{
-				break;
-			}
+				break; }
 			if (format[i] == 'c')
 			{
 				_putchar(va_arg(args, int)); /* prints the position of the string */
-				cont++;
-			}
+				cont++; }
 			else if (format[i] == 's')
 			{
-				cont += fputs(va_arg(args, char *), stdout);
-			}
+				cont += fputs(va_arg(args, char *), stdout); }
 			else if (format[i] == '%')
 			{
 				_putchar('%');
-				cont++;
-			}
+				cont++; }
 			else
 			{
 				_putchar('%');
 				_putchar(format[i]);
-				cont += 2;
-			}
+				cont += 2; }
 		}
 		else
 		{
 			_putchar(format[i]);
-			cont++;
-		}
+			cont++; }
 	}
 	va_end(args);
 	return (cont);
