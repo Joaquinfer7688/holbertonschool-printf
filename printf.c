@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			else if (format[j] == 's')
 			{
 				k = 0;
-				s = va_arg(args, char*);
+				s = va_arg(args, char *);
 				while (s[k] != '\0')
 				{
 					write(1, &s[k], 1);
