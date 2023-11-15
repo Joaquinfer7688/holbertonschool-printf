@@ -6,40 +6,43 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, cont = 0;
+	int i, j, k, cont = 0;
 	va_list args;
+	char *s;
 
 	va_start(args, format);
+	j = 0;
 
-	for (i = 0; format[i] != '\0'; i++) /* initalize variable i for counter */
+	while (format[j] != '\0')
 	{
-		if (format[i] == '%') /* checks for % */
+		if (format[j] == '%') /* checks for % */
 		{
-			i++;
-			if (format[i] == '\0')
+			j++;
+			if (format[j] == '%')
 			{
-				break; }
-			if (format[i] == 'c')
+				write(1, "%", 1);
+				cont++;
+			}
+			else if (format[j] == 'c')
 			{
-				_putchar(va_arg(args, int)); /* prints the position of the string */
+				i = va_arg(args, int);
+				write(1, &i, 1); /* prints the position of the string */
 				cont++; }
-			else if (format[i] == 's')
+			else if (format[j] == 's')
 			{
-				cont += fputs(va_arg(args, char *), stdout); }
-			else if (format[i] == '%')
-			{
-				_putchar('%');
-				cont++; }
+				k = 0;
+				s = va_arg(args, char*);
+				while (s[k] != '\0')
+				{
+					write(1, &s[k], 1);
+					k++;
+					cont++; }
+			}
 			else
 			{
-				_putchar('%');
-				_putchar(format[i]);
-				cont += 2; }
-		}
-		else
-		{
-			_putchar(format[i]);
-			cont++; }
+				write(1, &format[j], 1);
+				cont++; }
+			j++; }
 	}
 	va_end(args);
 	return (cont);
