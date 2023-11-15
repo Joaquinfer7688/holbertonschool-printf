@@ -44,8 +44,11 @@ int _printf(const char *format, ...)
 			{
 				write(1, "%", 1);
 				cont++;
+				if (format[j] != '\0')
+				{
 		       		write(1, &format[j], 1);
 				cont++;
+				}
 			}
 		}
 			else
