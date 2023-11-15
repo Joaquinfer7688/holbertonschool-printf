@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			j++; }
 			else
 			{
-				write(1, &format[j], 1);
+				write(1, &format[j - 1], 1);
 				cont++;
 				j++; }
 	}
