@@ -29,8 +29,8 @@ int _printf(const char *format, ...)
 
 	if (*format == '%')
 	{
-		write(1, "%%", 2);
-		char_print+= 2;
+		write(1, format, 1);
+		char_print++;
 	}
 	
 	else if (*format == 'c')
@@ -59,10 +59,8 @@ int _printf(const char *format, ...)
 	}
 	else
 	{
-		write(1, "%%", 1);
-		char_print ++;
-		write(1, format, 1);
-		char_print++;
+		write(1, format-1,2);
+		char_print+=2;
 	}
 	}
 		format++;
