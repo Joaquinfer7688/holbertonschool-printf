@@ -6,58 +6,52 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, k, cont = 0;
+	int char_print = 0;
 	va_list args;
-	char *s;
+
+	if (format == NULL)
+		return -1;
 
 	va_start(args, format);
-	j = 0;
-	if (format == NULL)
+
+	while (*format)
 	{
-		return (-1);
-	}
-	while (format[j] != '\0')
-	{
-		if (format[j] == '%') /* checks for % */
+		if (*format != '%')
 		{
-			j++;
-			if (format[j] == '%')
+			write(1, format, 1);
+			char_print++;
+		}
+		else
+		{
+			format++;
+			if (*format == '\0')
+				break;
+
+			if (*format == '%')
 			{
-				write(1, "%", 1);
-				cont++; }
-			else if (format[j] == 'c')
-			{
-				i = va_arg(args, int);
-				write(1, &i, 1); /* prints the position of the string */
-				cont++; }
-			else if (format[j] == 's')
-			{
-				k = 0;
-				s = va_arg(args, char *);
-				while (s[k] != '\0')
-				{
-					write(1, &s[k], 1);
-					k++;
-					cont++; }
+				write(1, format, 1);
+				char_print++;
 			}
-			else
+		else if (*format == 'c')
+		{
+			char c = va_arg(args, int);
+			write(1, &c, 1);
+			char_print++;
+		}
+
+			else if(*format == 's')
 			{
-				write(1, "%", 1);
-				cont++;
-				if (format[j] != '\0')
-				{
-		       		write(1, &format[j], 1);
-				cont++;
-				}
+				char *str = va_arg(args, char *);
+				int str_len = 0;
+			while (str[str_len] != '\0')
+				str_len++;
+
+			write(1, str, str_len);
+			char_print += str_len;
 			}
 		}
-			else
-			{
-				write(1, &format[j], 1);
-				cont++;
-			}
-			j++;
+			format++;
 	}
-	va_end(args);
-	return (cont);
+		va_end(args);
+		return char_print;
 }
