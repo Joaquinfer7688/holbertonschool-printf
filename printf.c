@@ -43,17 +43,25 @@ int _printf(const char *format, ...)
 	else if (*format == 's')
 	{
 		char *str = va_arg(list_of_args, char*);
-		int str_len = 0;
+		if (str == NULL)
+		{
+			write(1, "(null)", 6);
+			char_print += 6;
+		}
+		else
+		{
+			int str_len = 0;
+			while (str[str_len] != '\0')
+				str_len++;
+			write(1, str, str_len);
+			char_print += str_len;
+		}
+	}
+	}
+		format ++;
+	
+	}
 
-	while (str[str_len] != '\0')
-	str_len++;
-
-	write(1, str, str_len);
-	char_print += str_len;
-	}
-	}
-	format ++;
-	}
 	va_end(list_of_args);
 	return char_print;
 }
