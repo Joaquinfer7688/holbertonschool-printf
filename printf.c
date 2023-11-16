@@ -25,15 +25,11 @@ int _printf(const char *format, ...)
 	{
 		format++;
 		if (*format == '\0')
-		{
-		write(1, "%", 1);
-		char_print++;
-		break;
-		}
+			break;
 
 	if (*format == '%')
 	{
-		write(1, "%", 1);
+		write(1, format, 1);
 		char_print++;
 	}
 	
@@ -61,7 +57,12 @@ int _printf(const char *format, ...)
 			char_print += str_len;
 		}
 	}
-		}
+	else
+	{
+		write(1, format -1,2);
+		char_print +=2;
+	}
+	}
 		format++;
 	}
 
