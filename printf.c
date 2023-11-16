@@ -57,9 +57,13 @@ int _printf(const char *format, ...)
 			char_print += str_len;
 		}
 	}
+	else if (*format == '%')
+	{
+		write(1, "%", 1);
+		char_print++;
 	}
-		format ++;
-	
+	}
+		format++;
 	}
 
 	va_end(list_of_args);
