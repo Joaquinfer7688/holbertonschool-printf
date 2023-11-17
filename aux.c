@@ -51,7 +51,7 @@ long print_number(long num)
 
 	if (num < 0)
 	{
-		write(1, "-", 1);
+		write(1, "", 1);
 		num = -num;
 		count++;
 	}
@@ -72,5 +72,6 @@ long print_number(long num)
 		write(1, &buffer[i], 1);
 		count++;
 	}
+	free(buffer);
 	return (count);
 }
