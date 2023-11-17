@@ -8,6 +8,7 @@
 int process_str(const char *str)
 {
 	int str_len = 0;
+
 	while (str[str_len] != '\0')
 		str_len++;
 
@@ -24,7 +25,7 @@ int process_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
-	
+
 	if (num < 0)
 	{
 		write(1, "-", 1);
@@ -33,7 +34,7 @@ int process_int(va_list args)
 	}
 
 	count += print_number(num);
-	
+
 	return (count);
 }
 
@@ -46,12 +47,12 @@ int print_number(int num)
 {
 	int count = 0;
 	char digit;
-	
+
 	if (num / 10 != 0)
 		count += print_number(num / 10);
-	
+
 	digit = (num % 10) + '0';
 	write(1, &digit, 1);
-	
+
 	return (count + 1);
 }

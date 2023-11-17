@@ -34,23 +34,19 @@ int process_format(const char *format, va_list args)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			char_print++; }
+			write(1, format, 1), char_print++; }
 		else
 		{
 			format++;
 			if (*format == '\0')
 				return (-1);
-
 		if (*format == '%')
 		{
-			write(1, format - 1, 1);
-			char_print++; }
+			write(1, format - 1, 1), char_print++; }
 		else if (*format == 'c')
 		{
 			c = va_arg(args, int);
-			write(1, &c, 1);
-			char_print++; }
+			write(1, &c, 1), char_print++; }
 		else if (*format == 's')
 		{
 			str = va_arg(args, char*);
