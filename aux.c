@@ -43,7 +43,7 @@ int process_int(va_list args)
  * @num: Non-negative integer
  * Return: Number of digits printed
  */
-int print_number(int num)
+long print_number(long num)
 {
 	int count = 0;
 	char digit;
