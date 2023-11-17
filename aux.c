@@ -21,7 +21,7 @@ int process_str(const char *str)
  * @args: Variable arguments list
  * Return: Number of characters printed
  */
-int process_int(va_list args)
+long int process_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
@@ -42,12 +42,10 @@ int process_int(va_list args)
  * @num: Non-negative integer
  * Return: Number of digits printed
  */
-long print_number(long num)
+long int print_number(long int num)
 {
-	int count = 0, len, i;
+	int count = 0;
 	char digit;
-	char *buffer;
-	bool negative = false;
 
 	if (num < 0)
 	{
@@ -55,23 +53,11 @@ long print_number(long num)
 		num = -num;
 		count++;
 	}
-	buffer = malloc(sizeof(char) * 100);
-	len = 0;
+	if (num / 10 != 0)
+		count += print_number(num / 10);
 
-	do {
-		digit = (num % 10) + '0';
-		buffer[len++] = digit;
-		num /= 10;
-	} while (num > 0);
-	if (negative)
-	{
-		len++;
-	}
-	for (i = len - 1; i >=0; i--)
-	{
-		write(1, &buffer[i], 1);
-		count++;
-	}
-	free(buffer);
-	return (count);
+	digit = (num % 10) + '0';
+	write(1, &digit, 1);
+
+	return (count + 1);
 }
