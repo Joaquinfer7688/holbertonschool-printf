@@ -50,8 +50,9 @@ int print_number(int num)
 
 	if (num < 0)
 	{
-		write(1, "-", 1);
+		write(1, "", 1);
 		count++;
+		num = -num;
 	}
 
 	if (num / 10 != 0)
