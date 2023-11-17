@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
                 format++;
                 if (*format == '\0')
 		{
-			write(1, format -1, 1);
-                        break;
+			write(1, format -1, 2);
 		}
 
         if (*format == '%')
