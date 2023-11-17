@@ -48,6 +48,13 @@ int print_number(int num)
 	int count = 0;
 	char digit;
 
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		count++;
+		num = -num;
+	}
+
 	if (num / 10 != 0)
 		count += print_number(num / 10);
 
