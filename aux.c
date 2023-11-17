@@ -21,7 +21,7 @@ int process_str(const char *str)
  * @args: Variable arguments list
  * Return: Number of characters printed
  */
-int process_int(va_list args)
+long process_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
@@ -32,7 +32,6 @@ int process_int(va_list args)
 		num = -num;
 		count++;
 	}
-
 	count += print_number(num);
 
 	return (count);
@@ -51,8 +50,8 @@ long print_number(long num)
 	if (num < 0)
 	{
 		write(1, "", 1);
-		count++;
 		num = -num;
+		count++;
 	}
 	if (num / 10 != 0)
 		count += print_number(num / 10);

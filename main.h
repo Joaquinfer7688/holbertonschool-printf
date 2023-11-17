@@ -11,6 +11,6 @@ int _printf(const char *format, ...);
 int process_format(const char *format, va_list args);
 int process_str(const char *str);
 long print_number(long num);
-int process_int(va_list args);
+long process_int(va_list args);
 
 #endif
