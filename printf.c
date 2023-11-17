@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int char_print = 0, str_len = 0;
+	int char_print = 0, str_len;
 	va_list list_of_args;
 
 	if (format == NULL)
@@ -46,6 +46,8 @@ int _printf(const char *format, ...)
 				char_print += 6; }
 			else
 			{
+				str_len = 0;
+
 				while (str[str_len] != '\0')
 					str_len++;
 				write(1, str, str_len);
