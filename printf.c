@@ -6,13 +6,29 @@
  */
 int _printf(const char *format, ...)
 {
-	int char_print = 0, str_len;
+	int char_print = 0;
 	va_list list_of_args;
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(list_of_args, format);
+	char_print = process_format(format, list_of_args);
+	va_end(list_of_args);
+
+	return (char_print);
+}
+
+/**
+ * process_format - function
+ * @format: pointer
+ *@args: va list
+ * Return: return
+ */
+int process_format(const char *format, va_list args)
+{
+	int char_print = 0;
+	char c, *str;
 
 	while (*format)
 	{
@@ -32,33 +48,40 @@ int _printf(const char *format, ...)
 			char_print++; }
 		else if (*format == 'c')
 		{
-			char c = va_arg(list_of_args, int);
-
+			c = va_arg(args, int);
 			write(1, &c, 1);
 			char_print++; }
 		else if (*format == 's')
 		{
-			char *str = va_arg(list_of_args, char*);
-
+			str = va_arg(args, char*);
 			if (str == NULL)
 			{
-				write(1, "(null)", 6);
-				char_print += 6; }
+				write(1, "(null)", 6), char_print += 6; }
 			else
 			{
-				str_len = 0;
-
-				while (str[str_len] != '\0')
-					str_len++;
-				write(1, str, str_len);
-				char_print += str_len; }
+				char_print += process_str(str); }
 		}
 		else
 		{
-			write(1, format - 1, 2);
-			char_print += 2; }
+			write(1, format - 1, 2), char_print += 2; }
 		}
-			format++; }
-		va_end(list_of_args);
-		return (char_print);
+		format++; }
+	return (char_print);
+}
+
+/**
+ * process_str - Function
+ * @str: pointer
+ * Return: return
+ */
+int process_str(const char *str)
+{
+	int str_len = 0;
+
+	while (str[str_len] != '\0')
+		str_len++;
+
+	write(1, str, str_len);
+
+	return (str_len);
 }

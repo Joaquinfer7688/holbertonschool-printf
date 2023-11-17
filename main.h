@@ -8,10 +8,7 @@
 
 int _printf(const char *format, ...);
 
-int _putchar(char c);
-void _puts(const char *s);
-int binary(int num);
-int octal(int num);
-
+int process_format(const char *format, va_list args);
+int process_str(const char *str);
 
 #endif
