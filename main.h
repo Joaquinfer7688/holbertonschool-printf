@@ -5,12 +5,13 @@
 #include <stdarg.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 int _printf(const char *format, ...);
 
 int process_format(const char *format, va_list args);
 int process_str(const char *str);
 long print_number(long num);
-long process_int(va_list args);
+int process_int(va_list args);
 
 #endif
