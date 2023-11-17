@@ -61,27 +61,14 @@ int process_format(const char *format, va_list args)
 			{
 				char_print += process_str(str); }
 		}
+		else if (*format == 'd' || *format == 'i')
+		{
+			char_print += process_int(args);
+		}
 		else
 		{
 			write(1, format - 1, 2), char_print += 2; }
 		}
 		format++; }
 	return (char_print);
-}
-
-/**
- * process_str - Function
- * @str: pointer
- * Return: return
- */
-int process_str(const char *str)
-{
-	int str_len = 0;
-
-	while (str[str_len] != '\0')
-		str_len++;
-
-	write(1, str, str_len);
-
-	return (str_len);
 }

@@ -10,5 +10,7 @@ int _printf(const char *format, ...);
 
 int process_format(const char *format, va_list args);
 int process_str(const char *str);
+int print_number(int num);
+int process_int(va_list args);
 
 #endif
