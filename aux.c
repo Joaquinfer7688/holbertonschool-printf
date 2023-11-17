@@ -61,5 +61,5 @@ long print_number(long num)
 	digit = (num % 10) + '0';
 	write(1, &digit, 1);
 
-	return (count);
+	return (count + 1);
 }
