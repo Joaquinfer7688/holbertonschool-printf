@@ -50,7 +50,7 @@ long print_number(long num)
 
 	if (num < 0)
 	{
-		write(1, "-", 1);
+		write(1, "", 1);
 		count++;
 		num = -num;
 	}
