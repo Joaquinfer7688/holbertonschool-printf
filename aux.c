@@ -52,7 +52,6 @@ int print_number(int num)
 	{
 		write(1, "-", 1);
 		count++;
-		num = -num;
 	}
 
 	if (num / 10 != 0)
