@@ -28,7 +28,6 @@ long int process_int(va_list args)
 
 	if (num == -2147483648)
 	{
-		write(1, "", 1);
 		count++;
 		count -= 17;
 	}
