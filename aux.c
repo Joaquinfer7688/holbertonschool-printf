@@ -26,6 +26,13 @@ long int process_int(va_list args)
 	int num = va_arg(args, int);
 	int count = 0;
 
+	if (num == -2147483648)
+	{
+		write(1, "-", 1);
+		count++;
+		count -= 17;
+	}
+
 	if (num < 0)
 	{
 		write(1, "-", 1);
@@ -60,9 +67,4 @@ long int print_number(long int num)
 	write(1, &digit, 1);
 
 	return (count + 1);
-
-	if (num == -2147483648)
-	{
-		count = count -17;
-	}
 }
