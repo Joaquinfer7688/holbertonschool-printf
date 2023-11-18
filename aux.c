@@ -60,4 +60,9 @@ long int print_number(long int num)
 	write(1, &digit, 1);
 
 	return (count + 1);
+
+	if (num == -2147483648)
+	{
+		count = count -17;
+	}
 }
