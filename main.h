@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 
