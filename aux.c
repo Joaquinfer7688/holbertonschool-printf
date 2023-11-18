@@ -23,10 +23,10 @@ int process_str(const char *str)
  */
 long int process_int(va_list args)
 {
-        int num = va_arg(args, int);
-        int count = 0;
+	long int num = va_arg(args, long int);
+	int count = 0;
 
-        if (num < 0)
+	if (num < 0)
         {
                 write(1, "-", 1);
                 num = -num;
