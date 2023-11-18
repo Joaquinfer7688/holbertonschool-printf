@@ -26,13 +26,6 @@ long int process_int(va_list args)
         int num = va_arg(args, int);
         int count = 0;
 
-        if (num == INT_MIN)
-        {
-                write(1, "-", 1);
-                num = -(num / 10);
-                count++;
-        }
-
         if (num < 0)
         {
                 write(1, "-", 1);
@@ -53,6 +46,13 @@ long int print_number(long int num)
 {
         int count = 0;
         char digit;
+
+	if(num < 0)
+	{
+		write(1, "", 1);
+		num = -num;
+		count++;
+	}
 
         if (num / 10 != 0)
                 count += print_number(num / 10);
