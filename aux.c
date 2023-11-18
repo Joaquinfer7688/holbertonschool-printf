@@ -23,25 +23,25 @@ int process_str(const char *str)
  */
 long int process_int(va_list args)
 {
-	int num = va_arg(args, int);
-	int count = 0;
+        int num = va_arg(args, int);
+        int count = 0;
 
-	if (num == INT_MIN)
-	{
-		write(1, "-", 1);
-		num = -(num / 10);
-		count++;
-	}
+        if (num == INT_MIN)
+        {
+                write(1, "-", 1);
+                num = -(num / 10);
+                count++;
+        }
 
-	if (num < 0)
-	{
-		write(1, "-", 1);
-		num = -num;
-		count++;
-	}
-	count += print_number(num);
+        if (num < 0)
+        {
+                write(1, "-", 1);
+                num = -num;
+                count++;
+        }
+        count += print_number(num);
 
-	return (count);
+        return (count);
 }
 
 /**
@@ -51,14 +51,15 @@ long int process_int(va_list args)
  */
 long int print_number(long int num)
 {
-	int count = 0;
-	char digit;
+        int count = 0;
+        char digit;
 
-	if (num / 10 != 0)
-		count += print_number(num / 10);
+        if (num / 10 != 0)
+                count += print_number(num / 10);
 
-	digit = (num % 10) + '0';
-	write(1, &digit, 1);
+        digit = (num % 10) + '0';
+        write(1, &digit, 1);
 
-	return (count + 1);
+        return (count + 1);
 }
+
