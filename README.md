@@ -7,7 +7,7 @@ This proyect contains a custom implementation of the `printf` function in C, nam
 `printf` returns the number of the characters printed (excluding the null byte at the end of strings).
 We were not asked to handle flag characters, field width, precision or length.
 
-## Function Description
+# Function Description
 ## Prototype
 ```c
 int _printf(const char *format, ...);
@@ -24,3 +24,48 @@ int _printf(const char *format, ...);
 | `%o`          | Convert a decimal number to octal and prints it |
 | `%x`| Convert a decimal number to hexadecimal and prints it in lowercase|
 | `%X` |Convert a decimal number to hexadecimal and prints it in uppercase|
+
+## Examples:
+```c
+_printf("Character:[%c]\n", 'H');
+output: Character:[H]
+```
+
+```c
+ _printf("String:[%s]\n", "I am a string !");
+output: String:[I am a string !]
+```
+
+```c
+len = _printf("Percent:[%%]\n");
+output: Percent:[%]
+```
+
+```c
+_printf("Length:[%d, %i]\n", len, len);
+output: Length:[39, 39]
+```
+
+## Compile
+The command to compile your files is: 
+```c
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```
+## Function prototypes
+All function prototypes used to compile are includen in header file "main.h":
+* int process_format(const char * format, va_list args);
+* int process_str(const char * str);
+* long int print_number(long int num);
+* long int process_int(va_list args);
+
+## File description
+* ** _printf.c: ** - contain the function _printf()
+* **aux.c:** - contain the function process_format(), process_str(), print_number() and process_int()
+* **main.c:** - contain the files to compile
+* **main.h:** - contain the prototypes of all functions and libraries
+
+##Flowchart
+
+## Authors
+- Joaquin Fernández - [Github](https://github.com/Joaquinfer7688)
+-Germán Silveira - [Github](https://github.com/Daldanos)
