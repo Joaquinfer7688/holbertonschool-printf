@@ -13,15 +13,14 @@ We were not asked to handle flag characters, field width, precision or length.
 int _printf(const char *format, ...);
 ```
 # Conversion Specifiers
-|Specifiers|Functions|Description| 
-|--|--|--|
-|s|print string|print a string| 
-|c|print char|print just a char| 
-|i|print integer|print a number in base 10|
-|d|print integer|print a number in base 10|
-|p|print pointer|print a memory address in base 16 lowercase| 
-|b|print binary|print a number in base 2|
-|x|print hexadecimal low|print a number in base 16 lowercase| 
-|X|print hexadecimal upp|print a number in base 16 uppercase|
-|o|print octal|print a number in base 8| 
-|R|print rot|print a string encoded in rot13 format|
+| Specifiers  | Description |
+| ------------- |:-------------:|
+| `%c`          | Prints a single character     |
+| `%s`          | Prints a string of characters |
+| `%d`          | Prints a decimal number       |
+| `%i`          | Prints an integer              |
+| `%u`          | Prints an unsigned int         |
+| `%b`          | Convert a decimal number to binary and prints it|
+| `%o`          | Convert a decimal number to octal and prints it |
+| `%x`| Convert a decimal number to hexadecimal and prints it in lowercase|
+| `%X` |Convert a decimal number to hexadecimal and prints it in uppercase|
