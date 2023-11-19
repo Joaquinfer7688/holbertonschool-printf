@@ -3,7 +3,7 @@
 Write your own `printf` function
 
 ## Overview
-This proyect contains a custom implementation of the `printf` function in C, named `_printf`capable of printing with the %d, %c, %s and %% specifiers to standar output.
+This proyect contains a custom implementation of the `printf` function in C, named `_printf` capable of printing with the %d, %c, %s and %% specifiers to standar output.
 `printf` returns the number of the characters printed (excluding the null byte at the end of strings).
 We were not asked to handle flag characters, field width, precision or length.
 
@@ -52,20 +52,20 @@ The command to compile your files is:
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 ## Function prototypes
-All function prototypes used to compile are includen in header file "main.h":
+All function prototypes used to compile and libraries are includen in header file "main.h":
 * int process_format(const char * format, va_list args);
 * int process_str(const char * str);
 * long int print_number(long int num);
 * long int process_int(va_list args);
 
 ## File description
-* ** _printf.c: ** - contain the function _printf()
+* **_printf.c:** - contain the function _printf()
 * **aux.c:** - contain the function process_format(), process_str(), print_number() and process_int()
 * **main.c:** - contain the files to compile
 * **main.h:** - contain the prototypes of all functions and libraries
 
-##Flowchart
+## Flowchart
 
 ## Authors
-- Joaquin Fernández - [Github](https://github.com/Joaquinfer7688)
--Germán Silveira - [Github](https://github.com/Daldanos)
+- Joaquin Fernández - [Github](https://github.com/Joaquinfer7688), Holbertons School #Cohort 22
+- Germán Silveira - [Github](https://github.com/Daldanos), Holberton School #Cohort 22
