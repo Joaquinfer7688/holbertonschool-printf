@@ -64,6 +64,7 @@ All function prototypes used to compile and libraries are includen in header fil
 * **main.h** - contain the prototypes of all functions and libraries
 
 ## Flowchart
+![enter image description here](blob:https://web.whatsapp.com/3c847031-8d98-49f3-ab93-27ae03c35654)
 
 ## Authors
 - Joaquin Fernández - [Github](https://github.com/Joaquinfer7688), Holberton School #Cohort 22
