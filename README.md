@@ -11,17 +11,17 @@ We were not asked to handle flag characters, field width, precision or length.
 ## Prototype
 ```c
 int _printf(const char *format, ...);
-```c
+```
 # Conversion Specifiers
 |Specifiers|Functions|Description| 
 |--|--|--|
-|s|print_string|print a string| 
-|c|print_char|print just a char| 
-|i|print_integer|print a number in base 10|
-|d|print_integer|print a number in base 10|
-|p|print_pointer|print a memory address in base 16 lowercase| 
-|b|print_binary|print a number in base 2|
-|x|print_hexadecimal_low|print a number in base 16 lowercase| 
-|X|print_hexadecimal_upp|print a number in base 16 uppercase|
-|o|print_octal|print a number in base 8| 
-|R|print_rot|print a string encoded in rot13 format|
+|s|print string|print a string| 
+|c|print char|print just a char| 
+|i|print integer|print a number in base 10|
+|d|print integer|print a number in base 10|
+|p|print pointer|print a memory address in base 16 lowercase| 
+|b|print binary|print a number in base 2|
+|x|print hexadecimal low|print a number in base 16 lowercase| 
+|X|print hexadecimal upp|print a number in base 16 uppercase|
+|o|print octal|print a number in base 8| 
+|R|print rot|print a string encoded in rot13 format|
