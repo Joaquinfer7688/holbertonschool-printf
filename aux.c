@@ -23,7 +23,7 @@ int process_str(const char *str)
  */
 long int process_int(va_list args)
 {
-	long int num = va_arg(args, long int);
+	int num = va_arg(args, int);
 	int count = 0;
 
 	if (num < 0)
@@ -46,13 +46,28 @@ long int print_number(long int num)
 {
         int count = 0;
         char digit;
+	char *min = "2147483648";
+	char *max = "2147483647";
 
-	if(num < 0)
+	if (num == INT_MIN)
 	{
-		write(1, "-", 1);
+		write(1, min, 10);
+		return (10);
+	}
+
+	if (num == INT_MAX)
+	{
+		write(1, max, 10);
+		return (10);
+	}
+
+	if (num < 0)
+	{
+		write(1, "", 1);
 		num = -num;
 		count++;
 	}
+
 	if (num / 10 != 0)
 		count += print_number(num / 10);
 
