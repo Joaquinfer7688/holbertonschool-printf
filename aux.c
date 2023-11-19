@@ -23,7 +23,7 @@ int process_str(const char *str)
  */
 long int process_int(va_list args)
 {
-	int num = va_arg(args, int);
+	long int num = va_arg(args, long int);
 	int count = 0;
 
 	if (num < 0)
@@ -49,16 +49,15 @@ long int print_number(long int num)
 
 	if(num < 0)
 	{
-		write(1, "", 1);
+		write(1, "-", 1);
 		num = -num;
 		count++;
 	}
+	if (num / 10 != 0)
+		count += print_number(num / 10);
 
-        if (num / 10 != 0)
-                count += print_number(num / 10);
-
-        digit = (num % 10) + '0';
-        write(1, &digit, 1);
+	digit = (num % 10) + '0';
+	write(1, &digit, 1);
 
         return (count + 1);
 }
