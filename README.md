@@ -2,6 +2,8 @@
 
 Write your own `printf` function
 
+![alt text](https://github.com/Joaquinfer7688/holbertonschool-printf/blob/master/title.jpeg)
+
 ## Overview
 This proyect contains a custom implementation of the `printf` function in C, named `_printf` capable of printing with the %d, %c, %s and %% specifiers to standar output.`printf` returns the number of the characters printed (excluding the null byte at the end of strings).
 We were not asked to handle flag characters, field width, precision or length.
@@ -64,8 +66,7 @@ All function prototypes used to compile and libraries are includen in header fil
 * **main.h** - contain the prototypes of all functions and libraries
 
 ## Flowchart
-![enter image description here](blob:https://web.whatsapp.com/3c847031-8d98-49f3-ab93-27ae03c35654)
-
+![alt text](https://github.com/Joaquinfer7688/holbertonschool-printf/blob/master/flowchart.png)
 ## Authors
 - Joaquin Fernández - [Github](https://github.com/Joaquinfer7688), Holberton School #Cohort 22
 - Germán Silveira - [Github](https://github.com/Daldanos), Holberton School #Cohort 22
