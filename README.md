@@ -1,6 +1,4 @@
-# Holberton School - _printf
-
-##printf
+## printf
 
 Write your own `printf` function
 
@@ -10,12 +8,18 @@ This proyect contains a custom implementation of the `printf` function in C, nam
 We were not asked to handle flag characters, field width, precision or length.
 
 ## Function Description
-#Prototype
+# Prototype
 ```c
 int _printf(const char *format, ...);
-#Conversion Specifiers
-| Specifiers | Description |
-|----------|----------|
-| `%c`     | Cell 2   |
-| `%s`     | Cell 5   |
-| `%d`     | Cell 8   |
+# Conversion Specifiers
+Specifiers	Functions	Description
+s	print_string	print a string
+c	print_char	print just a char
+i	print_integer	print a number in base 10
+d	print_integer	print a number in base 10
+p	print_pointer	print a memory address in base 16 lowercase
+b	print_binary	print a number in base 2
+x	print_hexadecimal_low	print a number in base 16 lowercase
+X	print_hexadecimal_upp	print a number in base 16 uppercase
+o	print_octal	print a number in base 8
+R	print_rot	print a string encoded in rot13 format
