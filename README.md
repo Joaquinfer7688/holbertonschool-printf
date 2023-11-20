@@ -62,7 +62,6 @@ All function prototypes used to compile and libraries are includen in header fil
 ## File description
 * **_printf.c** - contain the function _printf()
 * **aux.c** - contain the function process_format(), process_str(), print_number() and process_int()
-* **main.c** - contain the files to compile
 * **main.h** - contain the prototypes of all functions and libraries
 
 ## Flowchart
