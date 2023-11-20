@@ -60,7 +60,7 @@ All function prototypes used to compile and libraries are includen in header fil
 * long int process_int(va_list args);
 
 ## File description
-* **_printf.c** - contain the function _printf()
+* **printf.c** - contain the function _printf()
 * **aux.c** - contain the function process_format(), process_str(), print_number() and process_int()
 * **main.h** - contain the prototypes of all functions and libraries
 
